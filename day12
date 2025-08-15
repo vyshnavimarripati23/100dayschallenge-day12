@@ -1,0 +1,25 @@
+## 1.Remove duplicate chars from string 
+
+str2="practice"
+res=""
+for i in str2:
+    if i not in res:
+        res+=i
+print(res)
+o/p:practie
+
+
+
+## 2.Remove duplicate chars from string by converting it into char array. Remove duplicate in same array without extra space allocation. Using two pointer technique
+
+str1="palle"
+list1=[]
+for i in range(len(str1)):
+    list1=list1+[str1[i]]
+for j in range(len(list1)):
+    for k in range(j+1,len(list1)):
+        if list1[j]==list1[k]:
+            list1[k]=-1
+list1=[list1[i] for i in range(len(list1)) if list1[i]!=-1]
+print(list1)
+o/p:['p', 'a', 'l', 'e']
